@@ -3,133 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Project 2</title>
+    <title>Michael Ross</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #1a1b1e;
+            --text-color: #e4e4e4;
+            --accent-color: #64ffda;
+            --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+            --font-sans: 'Calibre', 'San Francisco', 'SF Pro Text', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5;
-        }
-        nav {
-            background-color: #1a73e8;
-            padding: 1rem;
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
-        nav a:hover {
-            opacity: 0.8;
-        }
-        .container {
-            max-width: 800px;
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-        }
-        section {
-            background: white;
             padding: 2rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        section:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+
+        nav {
+            position: fixed;
+            right: 40px;
+            top: 40px;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
         }
-        h1, h2 {
-            color: #1a73e8;
-        }
-        .contact-form {
-            display: grid;
+
+        .social-icons {
+            display: flex;
             gap: 1rem;
         }
-        input, textarea {
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            transition: border-color 0.3s ease;
+
+        .social-icons a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
         }
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #1a73e8;
+
+        .social-icons a:hover {
+            color: var(--accent-color);
         }
-        button {
-            background-color: #1a73e8;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
         }
-        button:hover {
-            background-color: #1557b0;
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-top: 6rem;
+            margin-bottom: 4rem;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+        }
+
+        .profile-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .profile-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: #8892b0;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-family: var(--font-mono);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #8892b0;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
+        .skills-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-family: var(--font-mono);
+        }
+
+        .project-card p {
+            color: #8892b0;
+            margin-bottom: 1rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                position: static;
+                margin-bottom: 2rem;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
+        <div class="social-icons">
+            <a href="https://github.com/Mross2858" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mtross2024/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
         <ul>
-            <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#projects">Projects</a></li>
         </ul>
     </nav>
 
-    <div class="container">
-        <section id="home">
-            <h1>Welcome to Claude Project 2</h1>
-            <p>This is a simple website created using GitHub and Claude.</p>
+    <main>
+        <section class="profile-section">
+            <img src="profile.jpg" alt="Michael Ross" class="profile-image">
+            <div class="profile-content">
+                <h1>Hi, I'm Michael Ross</h1>
+                <p>I'm a Sales Development Representative at a cybersecurity company with a background in data science. I'm passionate about AI and exploring its potential to transform how we work and create.</p>
+            </div>
         </section>
 
         <section id="about">
-            <h2>About Us</h2>
-            <p>Our mission is to demonstrate the power of collaboration between humans and AI in creating modern web experiences.</p>
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I work at the intersection of sales and technology, bringing a unique perspective that combines business development with technical understanding. With a minor in data science, I'm particularly interested in how AI can enhance business processes and create new opportunities.</p>
+                    <p>Currently, I'm focusing on exploring AI capabilities and implementing them in practical business scenarios. I believe in the power of AI to revolutionize how we approach problems and create solutions.</p>
+                </div>
+                <div class="skills">
+                    <ul class="skills-list">
+                        <li>Sales Development</li>
+                        <li>Data Science</li>
+                        <li>AI Implementation</li>
+                        <li>Business Development</li>
+                        <li>Technical Analysis</li>
+                        <li>Project Management</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
-        <section id="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Web Development</li>
-                <li>AI Integration</li>
-                <li>UI/UX Design</li>
-                <li>Technical Consulting</li>
-            </ul>
-        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Sales Decision Tree</h3>
+                    <p>A dynamic decision tree model that helps sales representatives navigate customer interactions and determine the most effective next steps in the sales process.</p>
+                    <div class="project-links">
+                        <a href="#">View Project →</a>
+                    </div>
+                </div>
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="4" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </div>
+                <div class="project-card">
+                    <h3>Outbound Philosophy</h3>
+                    <p>A comprehensive framework for outbound sales strategy, incorporating data-driven insights and best practices for maximizing customer engagement.</p>
+                    <div class="project-links">
+                        <a href="#">View Project →</a>
+                    </div>
+                </div>
 
-    <footer>
-        <p>© 2024 Claude Project 2. Follow us on social media</p>
-    </footer>
+                <div class="project-card">
+                    <h3>Cold Call Flow Chart</h3>
+                    <p>An interactive flow chart system designed to optimize cold calling processes and improve conversion rates through structured conversation paths.</p>
+                    <div class="project-links">
+                        <a href="#">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
