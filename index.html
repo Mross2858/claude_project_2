@@ -7,9 +7,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #1a1b1e;
-            --text-color: #e4e4e4;
-            --accent-color: #64ffda;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #2563eb;
+            --secondary-color: #6b7280;
             --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
             --font-sans: 'Calibre', 'San Francisco', 'SF Pro Text', sans-serif;
         }
@@ -92,12 +93,13 @@
             font-size: 4rem;
             margin-bottom: 1rem;
             font-weight: 600;
+            color: var(--text-color);
         }
 
         .profile-content p {
             font-size: 1.2rem;
             max-width: 600px;
-            color: #8892b0;
+            color: var(--secondary-color);
         }
 
         section {
@@ -120,7 +122,7 @@
 
         .about-text p {
             margin-bottom: 1rem;
-            color: #8892b0;
+            color: var(--secondary-color);
         }
 
         .skills-list {
@@ -149,10 +151,11 @@
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: #f8fafc;
             border-radius: 8px;
             padding: 1.5rem;
             transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .project-card:hover {
@@ -166,13 +169,8 @@
         }
 
         .project-card p {
-            color: #8892b0;
+            color: var(--secondary-color);
             margin-bottom: 1rem;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
         }
 
         .project-links a {
@@ -222,8 +220,8 @@
         <section class="profile-section">
             <img src="profile.jpg" alt="Michael Ross" class="profile-image">
             <div class="profile-content">
-                <h1>Hi, I'm Michael Ross</h1>
-                <p>I'm a Sales Development Representative at a cybersecurity company with a background in data science. I'm passionate about AI and exploring its potential to transform how we work and create.</p>
+                <h1>Hey, I'm Michael</h1>
+                <p>A sales development representative passionate about the intersection of AI and technology. Currently exploring ways to integrate artificial intelligence into everyday workflows.</p>
             </div>
         </section>
 
@@ -231,17 +229,18 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I work at the intersection of sales and technology, bringing a unique perspective that combines business development with technical understanding. With a minor in data science, I'm particularly interested in how AI can enhance business processes and create new opportunities.</p>
-                    <p>Currently, I'm focusing on exploring AI capabilities and implementing them in practical business scenarios. I believe in the power of AI to revolutionize how we approach problems and create solutions.</p>
+                    <p>I created this website as a hands-on experiment with Claude's new MCP (Model Context Protocol). I'm a Pitzer College Class of '24 graduate, where I majored in Organizational Studies and minored in Data Science. While I have a mildly technical background, my true passions lie in <strong>sales</strong> and exploring the potential of <strong>AI</strong>.</p>
+                    <p>I firmly believe that <strong>AI integration</strong> can transform workflows—not just in sales, but across industries. The possibilities are limitless, and I'm excited to be part of this evolution.</p>
+                    <p>My journey with AI began in the fall of '22 when I started using ChatGPT. Since then, I've been fascinated by its growth and applications. With Claude's MCP, I've unlocked the ability to build a seamless network between the model, my personal device, and the internet. This setup provides <strong>end-to-end control</strong> over the model's interactions and capabilities.</p>
                 </div>
                 <div class="skills">
                     <ul class="skills-list">
-                        <li>Sales Development</li>
-                        <li>Data Science</li>
-                        <li>AI Implementation</li>
-                        <li>Business Development</li>
-                        <li>Technical Analysis</li>
-                        <li>Project Management</li>
+                        <li>Development</li>
+                        <li>HTML, CSS, Git</li>
+                        <li>AI Integration</li>
+                        <li>Claude</li>
+                        <li>Prompt Engineering</li>
+                        <li>Workflow Automation</li>
                     </ul>
                 </div>
             </div>
@@ -252,23 +251,23 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>Sales Decision Tree</h3>
-                    <p>A dynamic decision tree model that helps sales representatives navigate customer interactions and determine the most effective next steps in the sales process.</p>
+                    <p>A data-driven approach to standardizing and optimizing sales talk tracks.</p>
                     <div class="project-links">
                         <a href="#">View Project →</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>Outbound Philosophy</h3>
-                    <p>A comprehensive framework for outbound sales strategy, incorporating data-driven insights and best practices for maximizing customer engagement.</p>
+                    <h3>AI-Assisted Web Development</h3>
+                    <p>Exploring the capabilities of AI in creating and managing modern web applications.</p>
                     <div class="project-links">
                         <a href="#">View Project →</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>Cold Call Flow Chart</h3>
-                    <p>An interactive flow chart system designed to optimize cold calling processes and improve conversion rates through structured conversation paths.</p>
+                    <h3>GitHub Automation</h3>
+                    <p>Implementing automated workflows for code management and deployment.</p>
                     <div class="project-links">
                         <a href="#">View Project →</a>
                     </div>
